@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <random>
 #include <cstdio>
+#include <string>
 
 using std::cout;
 using std::cin;
@@ -19,14 +20,15 @@ int main() {
     cout << "Enter the text you would like to Kishoreify: ";
     getline(cin, input, '\n');
 
-    double seedy = generateRandom(50, 100);
-    for(char &character : input) {
-        if(generateRandom(1, 100) < seedy) {
-            if((int) character >= 97 && (int) character <= 122) {
-                character = (char) (((int) character) - 32);
+    double seedy = generateRandom(40, 80);
+    for (char& character : input) {
+        if (generateRandom(1, 100) < seedy) {
+            if ((int)character >= 97 && (int)character <= 122) {
+                character = (char)(((int)character) - 32);
             }
         }
     }
 
     cout << input << endl;
+    system("pause");
 }
